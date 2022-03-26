@@ -1,0 +1,162 @@
+	<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Event Tickets Order Form</title>
+		<link rel="stylesheet" type="text/css" href="styles/normalize.css">
+		<link rel="stylesheet" type="text/css" href="styles/main.css">		
+	</head>
+
+	<body>
+		<div id="frame">
+			<header>
+				<img src="images/ornament-logo.png" alt="New Year Central Logo" style="width: 400px;">
+				<div id="header-line-1">New Year Central</div>
+				<div id="header-line-2">For the child in all of us!</div>
+			</header>
+
+			<!-- navigation starts -->
+			<nav id="nav_menu">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about_us.html">About Us</a></li>
+					<li><a href="products.html">Our Products</a></li>
+					<li><a href="tickets_order_form.html" class="current">Event Tickets</a></li>
+					<li><a href="contact_us.html">Contact Us</a></li>
+				</ul>
+			</nav>
+
+			<aside>
+				<div class="sidebar-title">Products of The Week...</div>
+				<ul>
+					<li><a href="assets/products/berry-garland.html">Natural Holly Berry Garland, 5f - $74.99</a></li>
+					<li><a href="assets/products/artificial-red-berry-garland.html">Artificial Red Berry and White Edge Holly Leaf Christmas Garland, 5.5f - $38.99</a></li>
+					<li><a href="assets/products/christmas-berries-stems.html">Christmas Berries Red Stems Evergreen Pine Branches, 8pcs - $15.99</a></li>
+				</ul>
+			</aside>
+			
+			<main>
+				<h1>Order Event Tickets</h1>
+				<!-- The form starts here... -->
+				<form name="order_form" action="place_order.html" method="post">
+					<!--Memeber Information fieldset-->
+					<fieldset id="MemberInfo">
+						<legend>Member Information</legend>
+						<!--Email-->
+						<label for="email">Email:</label>
+						<input type="email" id="email" name="email" autofocus required><br>
+						<!--First Name-->
+						<label for="fname">First Name:</label>
+						<input type="text" id="fname" name="fname" required><br>
+						<!--Last Name-->
+						<label for="lname">Last Name:</label>
+						<input type="text" id="lname" name="lname" required><br>
+						<!--Address-->
+						<label for="address">Address:</label>
+						<input type="text" id="address" name="address"><br>
+						<!--City-->
+						<label for="city">City:</label>
+						<input type="text" id="city" name="city" required><br>
+						<!--Province-->
+						<label for="province">Province:</label>
+						<input type="text" id="lname" name="lname" pattern="[A-Z]{2}" title="Expecting 2-letter code (i.e. ON)" placeholder="2-character code" required><br>
+						<!--Postal Code-->
+						<label for="postal_code">Postal Code:</label>
+						<input type="text" id="postal_code" name="postal_code" pattern="[A-Za-z0-9]{6}" title="Expecting 6 alphanumeric characters (i.e. NOG2W0)" placeholder="6-character code" required><br>
+						<!--Phone Number-->
+						<label for="phone_number">Phone Number:</label>
+						<input type="tel" id="phone_number" name="phone_number" title="Expecting example: 111-222-3333" placeholder="999-999-9999" pattern="\d{3}[\-]\d{3}[\-]\d{4}"><br>
+					</fieldset>
+					<!--Ordering Information-->
+					<fieldset id="OrderInfo">
+						<legend>Ordering Information</legend>
+						<!--Events-->
+						<label for="events">Event:</label>
+						<select name="events">
+							<option value="selected" selected>--choose event--</option>
+							<option value="cookie">Cookie Decoratoin Contest</option>
+							<option value="tree">Tree Decoration Contest</option>
+							<option value="ride_along">Gift of LIght Ride-Along</option>
+							<option value="santa">Breakfast with Santa</option>
+						</select><br>
+						<!--Order Type-->
+						<label for="order_type">Order Type:</label>
+						<select name="order_type">
+							<option value="selected" selected>--choose ticket type--</option>
+							<option value="member_package">Member Package</option>
+							<option value="donor_package">Donor Packag</option>
+							<option value="single_tickets">Single Tickets</option>
+						</select><br>
+						<!--Number of Tickets-->
+						<label for="ticket_number">Number of Tickets:</label>
+						<input type="number" id="ticket_number" name="ticket_number" min="1" max="20" placeholder="Number of Tickets">
+					</fieldset>
+					<!--Payment Method-->
+					<fieldset id="payment_method">
+						<legend for="Payment_Info">Payment Method</legend>
+						<input type="radio" id="bill" name="payment" value="bill">
+						<label for="bill">Bill Me</label>
+						<input type="radio" id="CC" name="payment" value="CC">
+						<label for="CC">Credit Card</label>
+					</fieldset>
+					<!--Credit Card Info-->
+					<fieldset id="CardInfo">
+						<legend>Credit Card Information</legend>
+						<!--Credit Card Type-->
+						<label for="card_type">Card Type:</label>
+						<select name="card_type" class="cardtype">  
+							<option value="selected" selected>--card type--</option>
+							<option value="visa">Visa</option>
+							<option value="mastercard">Master Card</option>
+							<option value="discover">Discover</option>
+						</select>
+						<br>
+						<!--Credit Card Number-->
+						<label for="card#">Card Number:</label>
+						<input type="text" name="card#" id="card#" pattern=^\d{4}-\d{4}-\d{4}-\d{4}$ title="16-digit: 1111-2222-3333-4444" placeholder="16-digits" required>
+						<br>
+						<!--Card Expiration Date-->
+						<label for="Expdate">Expiration Date:</label>
+						<!--Month-->
+						<select name="month" class="month">
+							<option value="month" selected>--month--</option>
+							<option value="January">January</option>
+							<option value="February">February</option>
+							<option value="March">March</option>
+							<option value="April">April</option>
+							<option value="May">May</option>
+							<option value="June">June</option>
+							<option value="July">July</option>
+							<option value="August">August</option>
+							<option value="September">September</option>
+							<option value="October">October</option>
+							<option value="November">November</option>
+							<option value="December">December</option>
+						</select>
+						<!--Year-->
+						<select name="year" class="year">
+							<option value="year" selected>--year--</option>
+							<option value="21">2021</option>
+							<option value="22">2022</option>
+							<option value="23">2023</option>
+							<option value="24">2024</option>
+							<option value="25">2025</option>
+							<option value="26">2026</option>
+							<option value="27">2027</option>
+						</select>
+					</fieldset>
+					<!--Submit Order-->
+					<fieldset id="Buttons">
+						<legend>Submit Your Order</legend>
+						<input type="submit" id="submit" value="Submit" title="Submit Form">
+						<input type="reset" id="reset" value="Reset" title="Refresh ">
+					</fieldset>
+				</form>
+			</main>
+			
+			<footer>
+				<p>&copy; 2021 New Year Central. Created by Drew Sullivan, 8763849.</p>
+			</footer>
+		</div>
+	</body>
+</html>
